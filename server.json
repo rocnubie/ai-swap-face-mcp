@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.rocnubie/ai-swap-face-mcp",
+  "title": "AI Swap Face MCP",
+  "description": "AI Swap Face is an online tool that swaps faces in photos and produces fast, high-quality results",
+  "version": "0.1.0",
+  "websiteUrl": "https://aiswapface.online",
+  "repository": {
+    "url": "https://github.com/rocnubie/ai-swap-face-mcp",
+    "source": "github"
+  }
+}

@@ -2,6 +2,7 @@
 
 > AI Swap Face - Online AI Face Swap Tool
 
+[![MCP Badge](https://lobehub.com/badge/mcp/rocnubie-ai-swap-face-mcp)](https://lobehub.com/mcp/rocnubie-ai-swap-face-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Stdio Transport](https://img.shields.io/badge/transport-stdio-6e6e6e)](https://modelcontextprotocol.io/specification)
 [![Read Only](https://img.shields.io/badge/server-read--only-2ea44f)](#tools)
@@ -62,19 +63,33 @@ _Input:_ no parameters. _Returns:_ text/markdown.
 - `site://ai-swap-face/faq` — Short FAQ generated from public site metadata.
 - `site://ai-swap-face/links` — Canonical URLs to share with users.
 
+## Prompts
+
+### `tell_me_about_ai_swap_face`
+Summarize what the site is, who it's for, and how it works. — AI Swap Face
+
+### `try_image_style_ai_swap_face`
+Recommend a starting image-generation style for a stated goal. — AI Swap Face
+
 ## Installation
 
-Clone the repository and point your MCP client at the local entry point.
+### Install via Smithery
 
 ```bash
-git clone https://github.com/<your-account>/ai-swap-face-mcp.git
+npx -y @smithery/cli install ai-swap-face-mcp --client claude
+```
+
+(Replace `claude` with `cursor`, `windsurf`, or `continue` for those clients.)
+
+### Install from source
+
+```bash
+git clone https://github.com/rocnubie/ai-swap-face-mcp.git
 cd ai-swap-face-mcp
 pnpm install
 ```
 
-### Claude Desktop
-
-Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
+Then add to your MCP client config (`claude_desktop_config.json` for Claude Desktop, `mcp.json` for Cursor / Windsurf / Continue):
 
 ```json
 {
@@ -88,10 +103,6 @@ Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
   }
 }
 ```
-
-### Cursor / Windsurf / Continue
-
-Use the same `mcpServers` block in your client's MCP configuration file.
 
 ### Debug with MCP Inspector
 
@@ -110,7 +121,6 @@ npx @modelcontextprotocol/inspector node src/index.mjs
 ```bash
 pnpm install
 pnpm start                 # run the server over stdio
-pnpm test                  # run the package tests
 ```
 
 ## License
