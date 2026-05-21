@@ -1,0 +1,22 @@
+{
+  "name": "msa-ai-swap-face-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal read-only MCP for AI Swap Face.",
+  "homepage": "https://aiswapface.online",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "ai-swap-face",
+    "image-gen"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

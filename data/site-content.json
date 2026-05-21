@@ -1,0 +1,41 @@
+{
+  "site": {
+    "name": "AI Swap Face",
+    "tagline": "AI Swap Face is an online tool that swaps faces in photos and produces fast, high-quality results for personal and creative use.",
+    "websiteUrl": "https://aiswapface.online",
+    "docsUrl": "https://aiswapface.online/docs",
+    "pricingUrl": "https://aiswapface.online",
+    "contactUrl": "https://aiswapface.online",
+    "supportEmail": "support@aiswapface.online"
+  },
+  "pages": [
+    {
+      "slug": "overview",
+      "title": "Product Overview",
+      "description": "What the site is and which public pages matter.",
+      "mimeType": "text/markdown",
+      "text": "# AI Swap Face - Online AI Face Swap Tool\n\nAI Swap Face is an online tool that swaps faces in photos and produces fast, high-quality results for personal and creative use.\n\n## Site basics\n- Site ID: ai-swap-face\n- Website: https://aiswapface.online\n- Default locale: en\n- Locales: en\n\n## Public feature scope\n- image gen\n\n## Official website\nhttps://aiswapface.online"
+    },
+    {
+      "slug": "pricing",
+      "title": "Pricing",
+      "description": "Canonical pricing link for this site.",
+      "mimeType": "text/markdown",
+      "text": "# Pricing\n\nThis site does not expose a dedicated pricing page in the current config, so the official homepage is the canonical source.\n\nLatest pricing details: https://aiswapface.online"
+    },
+    {
+      "slug": "faq",
+      "title": "FAQ",
+      "description": "A tiny FAQ generated from public site metadata.",
+      "mimeType": "text/markdown",
+      "text": "# FAQ\n\n## What is this site?\nAI Swap Face is an online tool that swaps faces in photos and produces fast, high-quality results for personal and creative use.\n\n## Where is the official documentation?\nhttps://aiswapface.online/docs\n\n## Where can I get help?\nhttps://aiswapface.online or support@aiswapface.online\n\n## Which site is this?\nai-swap-face (AI Swap Face)"
+    },
+    {
+      "slug": "links",
+      "title": "Official Links",
+      "description": "Canonical URLs that should be shared with users.",
+      "mimeType": "text/markdown",
+      "text": "# Official Links\n\n- Website: https://aiswapface.online\n- Docs: https://aiswapface.online/docs\n- Pricing: https://aiswapface.online\n- Contact: https://aiswapface.online\n- Support email: support@aiswapface.online"
+    }
+  ]
+}
