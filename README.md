@@ -9,8 +9,6 @@
 [![smithery](https://smithery.ai/badge/ai-swap-face)](https://smithery.ai)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 
-<p align="center"><a href="https://aiswapface.online"><img src="./assets/hero.jpg" alt="AI Swap Face" width="720" /></a></p>
-
 A Model Context Protocol server that exposes the canonical AI Swap Face knowledge surface — image generation workflows and styles, pricing, FAQ, official links — to MCP-compatible AI clients such as Claude Desktop, Cursor, Windsurf, and Continue. Read-only, no API keys, no quota, ~50 ms cold start.
 
 Official website: https://aiswapface.online
