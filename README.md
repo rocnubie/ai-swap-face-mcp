@@ -1,16 +1,21 @@
-# AI Swap Face MCP
+# AI Swap Face MCP Server
 
-A minimal, read-only MCP for AI Swap Face.
+> AI Swap Face - Online AI Face Swap Tool
 
-This package is generated from the MSA multi-site system and is built for one very specific job:
-- provide a real MCP that can be installed and indexed
-- keep the setup simple with local `stdio`
-- avoid backend integration and API quota costs
-- send users back to the official AI Swap Face website
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Stdio Transport](https://img.shields.io/badge/transport-stdio-6e6e6e)](https://modelcontextprotocol.io/specification)
+[![Read Only](https://img.shields.io/badge/server-read--only-2ea44f)](#tools)
+[![MCP](https://img.shields.io/badge/MCP-1.0-blue)](https://modelcontextprotocol.io)
+[![smithery](https://smithery.ai/badge/ai-swap-face)](https://smithery.ai)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+
+<p align="center"><a href="https://aiswapface.online"><img src="./assets/hero.jpg" alt="AI Swap Face" width="720" /></a></p>
+
+A Model Context Protocol server that exposes the canonical AI Swap Face knowledge surface — image generation workflows and styles, pricing, FAQ, official links — to MCP-compatible AI clients such as Claude Desktop, Cursor, Windsurf, and Continue. Read-only, no API keys, no quota, ~50 ms cold start.
 
 Official website: https://aiswapface.online
 
-## About AI Swap Face
+## 🎨 About AI Swap Face
 
 AI Swap Face is a browser-based face-swapping tool that lets users replace faces in photos and videos using neural network processing. No software installation is required — users upload an image or video clip, select a source face, and the service produces a composited result with automatic color matching and blend controls. The platform supports single-face and multi-face detection, meaning it can identify and swap multiple faces within a single group photo in one pass. Processed files are automatically deleted after 24 hours, and results are delivered without watermarks on supported tiers. A REST API with webhook support is also available for developers who want to embed the capability into their own applications.
 
@@ -35,87 +40,81 @@ AI Swap Face is a browser-based face-swapping tool that lets users replace faces
 
 AI Swap Face is aimed at a broad but digitally active audience. Social media content creators and video editors represent the primary users — people who need fast turnaround on visual effects without access to professional compositing software. Meme creators and hobbyists use the free tier for casual experimentation. App developers and small studios are served by the API and commercial licensing options, which allow the face-swap pipeline to be embedded in products without building underlying models. The multi-language interface (eight languages supported) extends the reach to non-English-speaking markets, and the no-install, browser-based design keeps the barrier to entry low for users who are not technically inclined.
 
-## Core Site Functions
+## Tools
 
-- Image generation and editing workflows for prompts, references, and visual iteration.
+### `list_styles`
+Return the canonical list of image-generation styles or presets the site exposes. (AI Swap Face)
 
-## Why This Site Is Good
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- The MCP points users to the official AI Swap Face website instead of a third-party landing page.
-- It keeps the package lightweight and easy to install because everything is static and read-only.
-- It gives AI clients canonical links for docs, pricing, and support in one place.
-- Useful when users want fast visual output without switching between multiple tools.
+### `get_pricing`
+Return the canonical pricing entry point for AI Swap Face.
 
-## Official Links
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- Website: https://aiswapface.online
-- Docs: https://aiswapface.online/docs
-- Pricing: https://aiswapface.online
-- Contact: https://aiswapface.online
-- Support: support@aiswapface.online
+### `get_official_links`
+Return the canonical list of official links for AI Swap Face (website, support, docs when available).
 
-## Site Metadata
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- Site ID: ai-swap-face
-- Site Name: AI Swap Face
-- Default language: en
-- Available languages: en
-- Feature tags: `image-gen`
+## Resources
 
-## MCP Resources
+- `site://ai-swap-face/styles` — Supported image-generation styles and presets.
+- `site://ai-swap-face/pricing` — Canonical pricing entry point.
+- `site://ai-swap-face/faq` — Short FAQ generated from public site metadata.
+- `site://ai-swap-face/links` — Canonical URLs to share with users.
 
-- `site://meta`
-- `site://pages/overview`
-- `site://pages/pricing`
-- `site://pages/faq`
-- `site://pages/links`
+## Installation
 
-## Why This MCP Is Useful
-
-- It is a real MCP package, not just a README-only repository.
-- It is lightweight enough for quick indexing and easy local installation.
-- It gives AI clients structured access to official website context and links.
-- It is simple to fork, publish, and maintain for directory submissions.
-
-## Quick Start
-
-Install dependencies:
+Clone the repository and point your MCP client at the local entry point.
 
 ```bash
+git clone https://github.com/<your-account>/ai-swap-face-mcp.git
+cd ai-swap-face-mcp
 pnpm install
 ```
 
-Run the server:
+### Claude Desktop
 
-```bash
-pnpm start
-```
-
-Run tests:
-
-```bash
-pnpm test
-```
-
-## Claude Desktop Example
+Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
 
 ```json
 {
   "mcpServers": {
-    "ai-swap-face": {
-      "command": "pnpm",
+    "ai-swap-face-mcp": {
+      "command": "node",
       "args": [
-        "--dir",
-        "/absolute/path/to/exports/ai-swap-face",
-        "start"
+        "/absolute/path/to/ai-swap-face-mcp/src/index.mjs"
       ]
     }
   }
 }
 ```
 
-## Directory Submission Notes
+### Cursor / Windsurf / Continue
 
-- Repo type: local `stdio` MCP
-- Maintenance model: generated from the MSA multi-site source
-- Primary goal: directory indexing, official link discovery, and lightweight client install
+Use the same `mcpServers` block in your client's MCP configuration file.
+
+### Debug with MCP Inspector
+
+```bash
+npx @modelcontextprotocol/inspector node src/index.mjs
+```
+
+## Official Links
+
+- Website: https://aiswapface.online
+- Pricing: https://aiswapface.online/pricing
+- Support: support@aiswapface.online
+
+## Development
+
+```bash
+pnpm install
+pnpm start                 # run the server over stdio
+pnpm test                  # run the package tests
+```
+
+## License
+
+MIT

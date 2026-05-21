@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Minimal read-only MCP for AI Swap Face.",
+  "description": "MCP server for AI Swap Face — canonical website knowledge for AI clients.",
   "homepage": "https://aiswapface.online",
   "keywords": [
     "mcp",
     "modelcontextprotocol",
+    "claude",
+    "cursor",
+    "windsurf",
     "ai-swap-face",
     "image-gen"
   ],
